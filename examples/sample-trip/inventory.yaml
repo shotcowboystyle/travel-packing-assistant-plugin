@@ -1,0 +1,473 @@
+# Sample trip workspace — inventory.yaml
+#
+# Fictional contents for the worked example. `weight_g` is PER UNIT, not for the
+# whole `qty`. Anything with `carriage` other than `any` carries a
+# `carriage_reason`, because the reason is what a traveller needs at the point
+# they are being told to move it.
+
+items:
+  # ---- CHK1 / CUBE-A — clothing -------------------------------------------
+  - id: I001
+    name: "Wool jumper"
+    qty: 1
+    weight_g: 420
+    weight_source: measured
+    category: clothing
+    tier: useful
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 45, currency: USD}
+    value: 60
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-A
+
+  - id: I002
+    name: "Jeans"
+    qty: 2
+    weight_g: 620
+    weight_source: measured
+    category: clothing
+    tier: essential
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 50, currency: USD}
+    value: 70
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-A
+
+  - id: I003
+    name: "T-shirt"
+    qty: 6
+    weight_g: 160
+    weight_source: measured
+    category: clothing
+    tier: essential
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 12, currency: USD}
+    value: 15
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-A
+
+  - id: I004
+    name: "Socks and underwear (pairs)"
+    qty: 10
+    weight_g: 55
+    weight_source: measured
+    category: clothing
+    tier: essential
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 4, currency: USD}
+    value: 5
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-A
+
+  - id: I005
+    name: "Rain shell"
+    qty: 1
+    weight_g: 340
+    weight_source: measured
+    category: clothing
+    tier: useful
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 80, currency: USD}
+    value: 110
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-A
+
+  - id: I006
+    name: "Winter coat"
+    qty: 1
+    weight_g: 1450
+    weight_source: measured
+    category: clothing
+    tier: useful
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: false, cost: null, currency: null}
+    value: 180
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-A
+
+  # ---- CHK1 / CUBE-B — footwear and gifts ---------------------------------
+  - id: I007
+    name: "Running shoes"
+    qty: 1
+    weight_g: 780
+    weight_source: measured
+    category: footwear
+    tier: useful
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 95, currency: USD}
+    value: 120
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-B
+
+  - id: I008
+    name: "Hiking boots"
+    qty: 1
+    weight_g: 1500
+    weight_source: measured
+    category: footwear
+    tier: nice-to-have
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 90, currency: USD}
+    value: 150
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-B
+
+  - id: I009
+    name: "Ceramic mug (gift set)"
+    qty: 4
+    weight_g: 600
+    weight_source: measured
+    category: gifts
+    tier: nice-to-have
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 20, currency: USD}
+    value: 20
+    currency: USD
+    fragile: true
+    assigned_bag: CHK1
+    pinned: false
+    cube: CUBE-B
+
+  # ---- CHK1 loose ----------------------------------------------------------
+  - id: I010
+    name: "Toiletry bag (full)"
+    qty: 1
+    weight_g: 1250
+    weight_source: measured
+    category: toiletries
+    tier: essential
+    carriage: checked-only
+    carriage_reason: "Contains several containers over 100 ml; would be confiscated at security."
+    replaceable_at_destination: {possible: true, cost: 35, currency: USD}
+    value: 60
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: true
+    cube: null
+
+  - id: I011
+    name: "Olive oil tin, 500 ml"
+    qty: 2
+    weight_g: 620
+    weight_source: measured
+    category: gifts
+    tier: nice-to-have
+    carriage: checked-only
+    carriage_reason: "Liquid over 100 ml."
+    replaceable_at_destination: {possible: true, cost: 14, currency: USD}
+    value: 18
+    currency: USD
+    fragile: true
+    assigned_bag: CHK1
+    pinned: false
+    cube: null
+
+  - id: I012
+    name: "Multi-tool"
+    qty: 1
+    weight_g: 180
+    weight_source: measured
+    category: tools
+    tier: useful
+    carriage: checked-only
+    carriage_reason: "Locking blade — prohibited in the cabin."
+    replaceable_at_destination: {possible: true, cost: 40, currency: USD}
+    value: 75
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: true
+    cube: null
+
+  - id: I013
+    name: "Hardback book"
+    qty: 3
+    weight_g: 640
+    weight_source: measured
+    category: media
+    tier: nice-to-have
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 20, currency: USD}
+    value: 25
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: null
+
+  - id: I014
+    name: "Cast-iron skillet (gift)"
+    qty: 1
+    weight_g: 3400
+    weight_source: measured
+    category: gifts
+    tier: nice-to-have
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 55, currency: USD}
+    value: 55
+    currency: USD
+    fragile: false
+    assigned_bag: CHK1
+    pinned: false
+    cube: null
+
+  # ---- CAB1 / CUBE-C — tech -----------------------------------------------
+  - id: I015
+    name: "Laptop, 14-inch"
+    qty: 1
+    weight_g: 1350
+    weight_source: measured
+    category: electronics
+    tier: essential
+    carriage: cabin-only
+    carriage_reason: "Lithium battery installed in equipment; also too valuable to check."
+    replaceable_at_destination: {possible: false, cost: null, currency: null}
+    value: 1600
+    currency: USD
+    fragile: true
+    assigned_bag: CAB1
+    pinned: true
+    cube: CUBE-C
+
+  - id: I016
+    name: "Power bank, 20 000 mAh"
+    qty: 1
+    weight_g: 380
+    weight_source: measured
+    category: electronics
+    tier: useful
+    carriage: cabin-only
+    carriage_reason: "Spare lithium battery — forbidden in the hold on every carrier."
+    replaceable_at_destination: {possible: true, cost: 30, currency: USD}
+    value: 45
+    currency: USD
+    fragile: false
+    assigned_bag: CAB1
+    pinned: true
+    cube: CUBE-C
+
+  - id: I017
+    name: "Chargers and cables"
+    qty: 1
+    weight_g: 420
+    weight_source: measured
+    category: electronics
+    tier: essential
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 40, currency: USD}
+    value: 60
+    currency: USD
+    fragile: false
+    assigned_bag: CAB1
+    pinned: false
+    cube: CUBE-C
+
+  - id: I018
+    name: "Mirrorless camera and lens"
+    qty: 1
+    weight_g: 1150
+    weight_source: measured
+    category: electronics
+    tier: nice-to-have
+    carriage: cabin-only
+    carriage_reason: "Fragile and high value; hold handling and the insurance both rule it out."
+    replaceable_at_destination: {possible: false, cost: null, currency: null}
+    value: 900
+    currency: USD
+    fragile: true
+    assigned_bag: CAB1
+    pinned: false
+    cube: CUBE-C
+
+  # ---- CAB1 loose ----------------------------------------------------------
+  - id: I019
+    name: "Tablet"
+    qty: 1
+    weight_g: 480
+    weight_source: measured
+    category: electronics
+    tier: nice-to-have
+    carriage: cabin-only
+    carriage_reason: "Lithium battery installed in equipment."
+    replaceable_at_destination: {possible: true, cost: 220, currency: USD}
+    value: 260
+    currency: USD
+    fragile: true
+    assigned_bag: CAB1
+    pinned: false
+    cube: null
+
+  - id: I020
+    name: "Medication pouch"
+    qty: 1
+    weight_g: 180
+    weight_source: measured
+    category: health
+    tier: essential
+    carriage: cabin-only
+    carriage_reason: "Prescription medication must stay with the traveller if the hold bag goes missing."
+    replaceable_at_destination: {possible: false, cost: null, currency: null}
+    value: 90
+    currency: USD
+    fragile: false
+    assigned_bag: CAB1
+    pinned: true
+    cube: null
+
+  - id: I021
+    name: "Documents wallet"
+    qty: 1
+    weight_g: 140
+    weight_source: measured
+    category: documents
+    tier: essential
+    carriage: cabin-only
+    carriage_reason: "Passports and boarding passes."
+    replaceable_at_destination: {possible: false, cost: null, currency: null}
+    value: 0
+    currency: USD
+    fragile: false
+    assigned_bag: CAB1
+    pinned: true
+    cube: null
+
+  - id: I022
+    name: "Change of clothes (contingency)"
+    qty: 1
+    weight_g: 700
+    weight_source: estimated
+    category: clothing
+    tier: useful
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 40, currency: USD}
+    value: 55
+    currency: USD
+    fragile: false
+    assigned_bag: CAB1
+    pinned: false
+    cube: null
+
+  - id: I023
+    name: "Hardback book (in-flight)"
+    qty: 1
+    weight_g: 180
+    weight_source: measured
+    category: media
+    tier: nice-to-have
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 18, currency: USD}
+    value: 22
+    currency: USD
+    fragile: false
+    assigned_bag: CAB1
+    pinned: false
+    cube: null
+
+  # ---- PER1 ----------------------------------------------------------------
+  - id: I024
+    name: "E-reader"
+    qty: 1
+    weight_g: 210
+    weight_source: measured
+    category: electronics
+    tier: useful
+    carriage: cabin-only
+    carriage_reason: "Lithium battery installed in equipment."
+    replaceable_at_destination: {possible: true, cost: 130, currency: USD}
+    value: 150
+    currency: USD
+    fragile: false
+    assigned_bag: PER1
+    pinned: false
+    cube: null
+
+  - id: I025
+    name: "Neck pillow"
+    qty: 1
+    weight_g: 260
+    weight_source: measured
+    category: comfort
+    tier: nice-to-have
+    carriage: any
+    carriage_reason: null
+    replaceable_at_destination: {possible: true, cost: 15, currency: USD}
+    value: 25
+    currency: USD
+    fragile: false
+    assigned_bag: PER1
+    pinned: false
+    cube: null
+
+  # ---- not assigned by the solver ------------------------------------------
+  - id: I026
+    name: "Spare power bank, 10 000 mAh"
+    qty: 1
+    weight_g: 220
+    weight_source: measured
+    category: electronics
+    tier: expendable
+    carriage: cabin-only
+    carriage_reason: "Spare lithium battery — forbidden in the hold."
+    replaceable_at_destination: {possible: true, cost: 22, currency: USD}
+    value: 30
+    currency: USD
+    fragile: false
+    assigned_bag: null
+    pinned: false
+    cube: null
+
+  - id: I027
+    name: "Camping gas canister"
+    qty: 1
+    weight_g: 380
+    weight_source: vendor
+    category: outdoor
+    tier: expendable
+    carriage: prohibited
+    carriage_reason: "Compressed flammable gas — banned from cabin and hold alike."
+    replaceable_at_destination: {possible: true, cost: 9, currency: USD}
+    value: 9
+    currency: USD
+    fragile: false
+    assigned_bag: null
+    pinned: false
+    cube: null

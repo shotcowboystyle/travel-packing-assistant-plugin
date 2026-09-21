@@ -1,0 +1,27 @@
+# Everything being carried. Written by /travel-packing:inventory.
+# Schema: <plugin>/schema/inventory.schema.json
+#
+# weight_g is grams, PER UNIT, not for the whole qty.
+# Do not list bags or packing cubes here — their empty weight is tare, in bags.yaml.
+# Item ids are stable: assign once, never renumber. The plan and the PDFs reference them.
+
+items: []
+# - id: I001
+#   name: ""
+#   qty: 1
+#   weight_g: null
+#   weight_source: estimated   # measured | vendor | catalogue | estimated
+#   category: ""
+#   tier: useful               # essential | useful | nice-to-have | expendable
+#   carriage: any              # any | cabin-only | checked-only | prohibited
+#   carriage_reason: null      # REQUIRED whenever carriage is not "any"
+#   replaceable_at_destination:
+#     possible: false
+#     cost: null
+#     currency: ""
+#   value: null
+#   currency: ""
+#   fragile: false
+#   assigned_bag: null         # set by the solver; pre-set it to pin an item
+#   pinned: false              # true = solver must not move it
+#   cube: null

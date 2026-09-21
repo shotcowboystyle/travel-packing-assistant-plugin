@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://danielrosehill.github.io/travel-packing/schema/bags.schema.json",
+  "title": "bags.yaml",
+  "description": "Physical bags, their cubes, every scale reading, and the scales themselves. See docs/data-model.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bags"],
+  "properties": {
+    "bags": {
+      "type": "array",
+      "description": "empty in a freshly created workspace",
+      "items": { "$ref": "#/$defs/bag" }
+    },
+    "weighings": {
+      "type": "array",
+      "description": "every scale reading, kept as history; appended, never overwritten",
+      "items": { "$ref": "#/$defs/weighing" }
+    },
+    "scales": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/scale" }
+    }
+  },
+  "$defs": {
+    "dimensions": {
+      "type": ["array", "null"],
+      "items": { "type": "number", "exclusiveMinimum": 0 },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "bag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "type"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["checked", "cabin", "personal"] },
+        "owner": { "type": ["string", "null"] },
+        "tare_kg": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "description": "empty weight on the scale, nothing inside"
+        },
+        "external_cm": { "$ref": "#/$defs/dimensions" },
+        "expandable": { "type": "boolean" },
+        "cubes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/cube" }
+        }
+      }
+    },
+    "cube": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": ["string", "null"] },
+        "tare_kg": { "type": ["number", "null"], "minimum": 0 },
+        "volume_l": { "type": ["number", "null"], "exclusiveMinimum": 0 }
+      }
+    },
+    "weighing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bag", "phase", "gross_kg"],
+      "properties": {
+        "bag": { "type": "string", "minLength": 1 },
+        "phase": {
+          "type": "string",
+          "enum": ["empty", "outbound", "current", "final"]
+        },
+        "gross_kg": {
+          "type": "number",
+          "minimum": 0,
+          "description": "what the scale showed, bag and contents together"
+        },
+        "date": { "type": ["string", "null"], "format": "date" },
+        "scale": { "type": ["string", "null"] }
+      }
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": ["string", "null"] },
+        "resolution_kg": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "bias_kg": {
+          "type": ["number", "null"],
+          "description": "added to raw readings to correct them; suggested by scripts/reconcile.py, written by hand"
+        }
+      }
+    }
+  }
+}

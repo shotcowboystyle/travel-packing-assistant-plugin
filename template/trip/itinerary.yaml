@@ -1,0 +1,31 @@
+# Flights for this trip. Filled in by /travel-packing:itinerary.
+# Schema: <plugin>/schema/itinerary.schema.json — see <plugin>/docs/data-model.md
+
+trip:
+  id: "{{TRIP_NAME}}"     # quoted: an unquoted {{...}} is a YAML flow mapping, not a string
+  label: ""
+  travellers: 1
+  direction: outbound          # outbound | return | round-trip
+
+# One entry per issued ticket / PNR. Which segments share a ticket decides whether
+# bags are through-checked and whether one allowance governs the whole journey.
+tickets: []
+# - id: T1
+#   booking_ref: ""
+#   validating_carrier: ""     # IATA code of the airline whose stock the ticket is on
+#   segments: [S1, S2]
+
+segments: []
+# - id: S1
+#   date: 2026-01-01
+#   marketing_carrier: ""      # IATA code shown on the ticket
+#   marketing_flight: ""
+#   operating_carrier: ""      # who actually flies it — differs on codeshares
+#   from: ""                   # IATA airport code, not a city
+#   to: ""
+#   cabin: economy             # economy | premium-economy | business | first
+#   fare_brand: ""             # Light / Basic / Classic / Flex — allowances hang off this
+#   loyalty:
+#     programme: null
+#     tier: null
+#     carried_by: null

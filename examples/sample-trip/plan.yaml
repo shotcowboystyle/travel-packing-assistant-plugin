@@ -1,0 +1,385 @@
+generated_on: '2026-08-16T21:54:33+03:00'
+solver: pack_solver.py 1.0.0
+objective: max-min-headroom
+binding_limits:
+  checked:
+    pieces: 1
+    max_weight_kg: 23
+  cabin:
+    pieces: 1
+    max_weight_kg: 7
+  personal:
+    pieces: 1
+    max_weight_kg: 3
+bags:
+- id: CAB1
+  label: Black cabin roller
+  type: cabin
+  allowance_kg: 7.0
+  tare_kg: 2.1
+  contents_kg: 3.93
+  cube_tare_kg: 0.1
+  projected_gross_kg: 6.13
+  headroom_kg: 0.87
+  status: tight
+  cubes:
+  - id: CUBE-C
+    items:
+    - I004
+    - I015
+    - I016
+    - I018
+  loose_items:
+  - I020
+  - I021
+  - I023
+  last_weighing_kg: 7.5
+- id: CHK1
+  label: Large red hardshell
+  type: checked
+  allowance_kg: 23.0
+  tare_kg: 4.2
+  contents_kg: 17.78
+  cube_tare_kg: 0.21
+  projected_gross_kg: 22.19
+  headroom_kg: 0.81
+  status: tight
+  cubes:
+  - id: CUBE-A
+    items:
+    - I001
+    - I002
+    - I003
+    - I005
+    - I006
+    - I011
+    - I014
+  - id: CUBE-B
+    items:
+    - I007
+    - I008
+    - I009
+    - I013
+  loose_items:
+  - I010
+  - I012
+  - I022
+  last_weighing_kg: 22.4
+- id: PER1
+  label: Grey shoulder bag
+  type: personal
+  allowance_kg: 3.0
+  tare_kg: 0.6
+  contents_kg: 1.59
+  cube_tare_kg: 0.0
+  projected_gross_kg: 2.19
+  headroom_kg: 0.81
+  status: tight
+  loose_items:
+  - I017
+  - I019
+  - I024
+  - I025
+  - I026
+unassigned:
+- item: I027
+  name: Camping gas canister
+  reason: carriage=prohibited; cannot fly
+overflow_ranking:
+- item: I021
+  name: Documents wallet
+  bag: CAB1
+  kg_saved: 0.14
+  cost: 0.0
+  cost_per_kg: 0.0
+  replaceable: false
+  replace_cost: null
+  pinned: true
+  tier: essential
+  rank: 1
+- item: I004
+  name: Socks and underwear (pairs)
+  bag: CAB1
+  kg_saved: 0.55
+  cost: 4.0
+  cost_per_kg: 7.27
+  replaceable: true
+  replace_cost: 4.0
+  pinned: false
+  tier: essential
+  rank: 2
+- item: I009
+  name: Ceramic mug (gift set)
+  bag: CHK1
+  kg_saved: 2.4
+  cost: 20.0
+  cost_per_kg: 8.33
+  replaceable: true
+  replace_cost: 20.0
+  pinned: false
+  tier: nice-to-have
+  rank: 3
+- item: I013
+  name: Hardback book
+  bag: CHK1
+  kg_saved: 1.92
+  cost: 20.0
+  cost_per_kg: 10.42
+  replaceable: true
+  replace_cost: 20.0
+  pinned: false
+  tier: nice-to-have
+  rank: 4
+- item: I011
+  name: Olive oil tin, 500 ml
+  bag: CHK1
+  kg_saved: 1.24
+  cost: 14.0
+  cost_per_kg: 11.29
+  replaceable: true
+  replace_cost: 14.0
+  pinned: false
+  tier: nice-to-have
+  rank: 5
+- item: I003
+  name: T-shirt
+  bag: CHK1
+  kg_saved: 0.96
+  cost: 12.0
+  cost_per_kg: 12.5
+  replaceable: true
+  replace_cost: 12.0
+  pinned: false
+  tier: essential
+  rank: 6
+- item: I014
+  name: Cast-iron skillet (gift)
+  bag: CHK1
+  kg_saved: 3.4
+  cost: 55.0
+  cost_per_kg: 16.18
+  replaceable: true
+  replace_cost: 55.0
+  pinned: false
+  tier: nice-to-have
+  rank: 7
+- item: I010
+  name: Toiletry bag (full)
+  bag: CHK1
+  kg_saved: 1.25
+  cost: 35.0
+  cost_per_kg: 28.0
+  replaceable: true
+  replace_cost: 35.0
+  pinned: true
+  tier: essential
+  rank: 8
+- item: I002
+  name: Jeans
+  bag: CHK1
+  kg_saved: 1.24
+  cost: 50.0
+  cost_per_kg: 40.32
+  replaceable: true
+  replace_cost: 50.0
+  pinned: false
+  tier: essential
+  rank: 9
+- item: I022
+  name: Change of clothes (contingency)
+  bag: CHK1
+  kg_saved: 0.7
+  cost: 40.0
+  cost_per_kg: 57.14
+  replaceable: true
+  replace_cost: 40.0
+  pinned: false
+  tier: useful
+  rank: 10
+- item: I025
+  name: Neck pillow
+  bag: PER1
+  kg_saved: 0.26
+  cost: 15.0
+  cost_per_kg: 57.69
+  replaceable: true
+  replace_cost: 15.0
+  pinned: false
+  tier: nice-to-have
+  rank: 11
+- item: I008
+  name: Hiking boots
+  bag: CHK1
+  kg_saved: 1.5
+  cost: 90.0
+  cost_per_kg: 60.0
+  replaceable: true
+  replace_cost: 90.0
+  pinned: false
+  tier: nice-to-have
+  rank: 12
+- item: I016
+  name: Power bank, 20 000 mAh
+  bag: CAB1
+  kg_saved: 0.38
+  cost: 30.0
+  cost_per_kg: 78.95
+  replaceable: true
+  replace_cost: 30.0
+  pinned: true
+  tier: useful
+  rank: 13
+- item: I017
+  name: Chargers and cables
+  bag: PER1
+  kg_saved: 0.42
+  cost: 40.0
+  cost_per_kg: 95.24
+  replaceable: true
+  replace_cost: 40.0
+  pinned: false
+  tier: essential
+  rank: 14
+- item: I026
+  name: Spare power bank, 10 000 mAh
+  bag: PER1
+  kg_saved: 0.22
+  cost: 22.0
+  cost_per_kg: 100.0
+  replaceable: true
+  replace_cost: 22.0
+  pinned: false
+  tier: expendable
+  rank: 15
+- item: I023
+  name: Hardback book (in-flight)
+  bag: CAB1
+  kg_saved: 0.18
+  cost: 18.0
+  cost_per_kg: 100.0
+  replaceable: true
+  replace_cost: 18.0
+  pinned: false
+  tier: nice-to-have
+  rank: 16
+- item: I001
+  name: Wool jumper
+  bag: CHK1
+  kg_saved: 0.42
+  cost: 45.0
+  cost_per_kg: 107.14
+  replaceable: true
+  replace_cost: 45.0
+  pinned: false
+  tier: useful
+  rank: 17
+- item: I007
+  name: Running shoes
+  bag: CHK1
+  kg_saved: 0.78
+  cost: 95.0
+  cost_per_kg: 121.79
+  replaceable: true
+  replace_cost: 95.0
+  pinned: false
+  tier: useful
+  rank: 18
+- item: I006
+  name: Winter coat
+  bag: CHK1
+  kg_saved: 1.45
+  cost: 180.0
+  cost_per_kg: 124.14
+  replaceable: false
+  replace_cost: null
+  pinned: false
+  tier: useful
+  rank: 19
+- item: I012
+  name: Multi-tool
+  bag: CHK1
+  kg_saved: 0.18
+  cost: 40.0
+  cost_per_kg: 222.22
+  replaceable: true
+  replace_cost: 40.0
+  pinned: true
+  tier: useful
+  rank: 20
+- item: I005
+  name: Rain shell
+  bag: CHK1
+  kg_saved: 0.34
+  cost: 80.0
+  cost_per_kg: 235.29
+  replaceable: true
+  replace_cost: 80.0
+  pinned: false
+  tier: useful
+  rank: 21
+- item: I019
+  name: Tablet
+  bag: PER1
+  kg_saved: 0.48
+  cost: 220.0
+  cost_per_kg: 458.33
+  replaceable: true
+  replace_cost: 220.0
+  pinned: false
+  tier: nice-to-have
+  rank: 22
+- item: I020
+  name: Medication pouch
+  bag: CAB1
+  kg_saved: 0.18
+  cost: 90.0
+  cost_per_kg: 500.0
+  replaceable: false
+  replace_cost: null
+  pinned: true
+  tier: essential
+  rank: 23
+- item: I024
+  name: E-reader
+  bag: PER1
+  kg_saved: 0.21
+  cost: 130.0
+  cost_per_kg: 619.05
+  replaceable: true
+  replace_cost: 130.0
+  pinned: false
+  tier: useful
+  rank: 24
+- item: I018
+  name: Mirrorless camera and lens
+  bag: CAB1
+  kg_saved: 1.15
+  cost: 900.0
+  cost_per_kg: 782.61
+  replaceable: false
+  replace_cost: null
+  pinned: false
+  tier: nice-to-have
+  rank: 25
+- item: I015
+  name: Laptop, 14-inch
+  bag: CAB1
+  kg_saved: 1.35
+  cost: 1600.0
+  cost_per_kg: 1185.19
+  replaceable: false
+  replace_cost: null
+  pinned: true
+  tier: essential
+  rank: 26
+warnings:
+- Allowance for S2 is confidence=assumed; plan is provisional.
+- CAB1 has only 0.87 kg of headroom; anything inside 1.5 kg is treated as tight, not
+  ok.
+- CHK1 has only 0.81 kg of headroom; anything inside 1.5 kg is treated as tight, not
+  ok.
+- PER1 has only 0.81 kg of headroom; anything inside 1.5 kg is treated as tight, not
+  ok.
+- 1 item(s) did not fit and are listed under `unassigned`.
+- 'Unaccounted mass on CAB1: 1.37 kg between itemised total and last weighing (outbound).
+  Run scripts/reconcile.py.'

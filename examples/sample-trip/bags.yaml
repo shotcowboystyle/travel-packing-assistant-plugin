@@ -1,0 +1,81 @@
+# Sample trip workspace — bags.yaml
+#
+# Fictional, but the shapes and the unit convention are real: bags and cubes are
+# in KILOGRAMS (`tare_kg`), items in inventory.yaml are in GRAMS (`weight_g`).
+
+bags:
+  - id: CHK1
+    label: "Large red hardshell"
+    type: checked
+    owner: daniel
+    tare_kg: 4.2
+    external_cm: [78, 50, 30]
+    expandable: true
+    cubes:
+      - id: CUBE-A
+        label: "Clothing cube"
+        tare_kg: 0.12
+        volume_l: 26
+      - id: CUBE-B
+        label: "Shoe and gift cube"
+        tare_kg: 0.09
+        volume_l: 18
+
+  - id: CAB1
+    label: "Black cabin roller"
+    type: cabin
+    owner: daniel
+    tare_kg: 2.1
+    external_cm: [55, 40, 20]
+    expandable: false
+    cubes:
+      - id: CUBE-C
+        label: "Tech pouch"
+        tare_kg: 0.1
+        volume_l: 6
+
+  - id: PER1
+    label: "Grey shoulder bag"
+    type: personal
+    owner: daniel
+    tare_kg: 0.6
+    external_cm: [38, 28, 14]
+    expandable: false
+    cubes: []
+
+weighings:
+  - bag: CHK1
+    phase: empty
+    gross_kg: 4.2
+    date: 2026-08-10
+    scale: hook
+  - bag: CHK1
+    phase: outbound
+    gross_kg: 22.4
+    date: 2026-08-16
+    scale: hook
+  - bag: CAB1
+    phase: empty
+    gross_kg: 2.1
+    date: 2026-08-10
+    scale: hook
+  - bag: CAB1
+    phase: outbound
+    gross_kg: 7.5
+    date: 2026-08-16
+    scale: hook
+  - bag: PER1
+    phase: empty
+    gross_kg: 0.6
+    date: 2026-08-10
+    scale: kitchen
+
+scales:
+  - id: hook
+    label: "Luggage hook scale"
+    resolution_kg: 0.1
+    bias_kg: 0.0
+  - id: kitchen
+    label: "Kitchen scale"
+    resolution_kg: 0.001
+    bias_kg: 0.0

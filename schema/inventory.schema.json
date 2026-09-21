@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://danielrosehill.github.io/travel-packing/schema/inventory.schema.json",
+  "title": "inventory.yaml",
+  "description": "Everything being carried. Weights are grams per unit. See docs/data-model.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "qty",
+        "weight_g",
+        "weight_source",
+        "category",
+        "tier",
+        "carriage"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "qty": { "type": "integer", "minimum": 1 },
+        "weight_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "per unit, not for the whole qty"
+        },
+        "weight_source": {
+          "type": "string",
+          "enum": ["measured", "estimated", "vendor", "catalogue"]
+        },
+        "category": { "type": "string", "minLength": 1 },
+        "tier": {
+          "type": "string",
+          "enum": ["essential", "useful", "nice-to-have", "expendable"]
+        },
+        "carriage": {
+          "type": "string",
+          "enum": ["any", "cabin-only", "checked-only", "prohibited"]
+        },
+        "carriage_reason": {
+          "type": ["string", "null"],
+          "description": "required whenever carriage != any; enforced by scripts/validate.py"
+        },
+        "replaceable_at_destination": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["possible"],
+          "properties": {
+            "possible": { "type": "boolean" },
+            "cost": { "type": ["number", "null"], "minimum": 0 },
+            "currency": { "type": ["string", "null"] }
+          }
+        },
+        "value": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "description": "replacement cost / sentimental proxy"
+        },
+        "currency": { "type": ["string", "null"] },
+        "fragile": { "type": "boolean" },
+        "assigned_bag": {
+          "type": ["string", "null"],
+          "description": "written by the solver; may be pre-set to pin an item"
+        },
+        "pinned": {
+          "type": "boolean",
+          "description": "true = solver must not move it"
+        },
+        "cube": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

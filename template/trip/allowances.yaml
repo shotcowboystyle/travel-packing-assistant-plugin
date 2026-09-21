@@ -1,0 +1,48 @@
+# Researched baggage policy, per segment. Written by /travel-packing:policies.
+# Schema: <plugin>/schema/allowances.schema.json
+#
+# RULE: a number without a source is not an allowance. Every entry carries source.url,
+# source.fetched_on and source.quote — the sentence the figures came from. Anything you
+# could not read on the carrier's own page is confidence: inferred or assumed, and stays
+# flagged everywhere it appears downstream.
+
+verified_on: null              # absolute date the research was run
+
+segments: []
+# - segment_id: S1
+#   system: piece              # piece | weight — decides whether splitting bags buys anything
+#   source:
+#     url: ""
+#     fetched_on: 2026-01-01
+#     route: webfetch          # webfetch | geo-egress | playwright | browser | manual
+#     confidence: confirmed    # confirmed | inferred | assumed
+#     quote: ""
+#   checked:
+#     included_pieces: 1
+#     max_weight_kg: 23
+#     max_linear_cm: 158
+#     hard_max_weight_kg: 32   # above this the bag is refused; no fee fixes it
+#   cabin:
+#     pieces: 1
+#     max_weight_kg: 8
+#     dimensions_cm: [55, 40, 23]
+#     enforced: unknown        # always | spot-check | rarely | unknown
+#   personal_item:
+#     pieces: 1
+#     max_weight_kg: null
+#     dimensions_cm: [40, 30, 15]
+#   excess:
+#     currency: ""
+#     extra_bag_prepaid: null
+#     extra_bag_airport: null
+#     overweight_band: ""
+#     overweight_fee: null
+#   notes: ""
+
+# Computed by /travel-packing:policies: the single set of limits to pack to.
+binding: null
+# binding:
+#   checked: {included_pieces: 1, max_weight_kg: 23, limited_by: S2}
+#   cabin: {max_weight_kg: 8, dimensions_cm: [55, 40, 23], limited_by: S1}
+#   personal_item: {max_weight_kg: null, limited_by: S1}
+#   rationale: ""

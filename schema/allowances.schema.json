@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://danielrosehill.github.io/travel-packing/schema/allowances.schema.json",
+  "title": "allowances.yaml",
+  "description": "Researched baggage policy per segment, plus the computed binding limits. See docs/data-model.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verified_on", "segments"],
+  "properties": {
+    "verified_on": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "absolute date the research was run; null in an unresearched workspace"
+    },
+    "segments": {
+      "type": "array",
+      "description": "empty until /travel-packing:policies has run",
+      "items": { "$ref": "#/$defs/segmentAllowance" }
+    },
+    "binding": { "$ref": "#/$defs/binding" }
+  },
+  "$defs": {
+    "dimensions": {
+      "type": ["array", "null"],
+      "items": { "type": "number", "exclusiveMinimum": 0 },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fetched_on", "route", "confidence"],
+      "properties": {
+        "url": { "type": ["string", "null"] },
+        "fetched_on": { "type": "string", "format": "date" },
+        "route": {
+          "type": "string",
+          "enum": ["webfetch", "geo-egress", "playwright", "browser", "manual"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["confirmed", "inferred", "assumed"]
+        },
+        "quote": {
+          "type": ["string", "null"],
+          "description": "the sentence the numbers came from; required in practice for confidence=confirmed"
+        }
+      }
+    },
+    "segmentAllowance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_id", "system", "source"],
+      "properties": {
+        "segment_id": { "type": "string", "minLength": 1 },
+        "carrier_name": {
+          "type": ["string", "null"],
+          "description": "human-readable carrier, for the rendered documents"
+        },
+        "system": { "type": "string", "enum": ["piece", "weight"] },
+        "source": { "$ref": "#/$defs/source" },
+        "checked": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "included_pieces": { "type": ["integer", "null"], "minimum": 0 },
+            "max_weight_kg": { "type": ["number", "null"], "minimum": 0 },
+            "max_linear_cm": {
+              "type": ["number", "null"],
+              "minimum": 0,
+              "description": "length + width + height"
+            },
+            "hard_max_weight_kg": {
+              "type": ["number", "null"],
+              "minimum": 0,
+              "description": "above this the bag is refused; no fee fixes it"
+            }
+          }
+        },
+        "cabin": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "pieces": { "type": ["integer", "null"], "minimum": 0 },
+            "max_weight_kg": { "type": ["number", "null"], "minimum": 0 },
+            "dimensions_cm": { "$ref": "#/$defs/dimensions" },
+            "enforced": {
+              "type": "string",
+              "enum": ["always", "spot-check", "rarely", "unknown"]
+            }
+          }
+        },
+        "personal_item": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "pieces": { "type": ["integer", "null"], "minimum": 0 },
+            "max_weight_kg": {
+              "type": ["number", "null"],
+              "minimum": 0,
+              "description": "null = published as unlimited / unstated"
+            },
+            "dimensions_cm": { "$ref": "#/$defs/dimensions" }
+          }
+        },
+        "excess": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "currency": { "type": ["string", "null"] },
+            "extra_bag_prepaid": { "type": ["number", "null"], "minimum": 0 },
+            "extra_bag_airport": { "type": ["number", "null"], "minimum": 0 },
+            "overweight_band": { "type": ["string", "null"] },
+            "overweight_fee": { "type": ["number", "null"], "minimum": 0 }
+          }
+        },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "binding": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "COMPUTED by /travel-packing:policies; the tightest limit across the journey",
+      "properties": {
+        "checked": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "included_pieces": { "type": ["integer", "null"], "minimum": 0 },
+            "max_weight_kg": { "type": ["number", "null"], "minimum": 0 },
+            "max_linear_cm": { "type": ["number", "null"], "minimum": 0 },
+            "hard_max_weight_kg": { "type": ["number", "null"], "minimum": 0 },
+            "limited_by": {
+              "type": ["string", "null"],
+              "description": "the segment id that sets the constraint"
+            }
+          }
+        },
+        "cabin": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "pieces": { "type": ["integer", "null"], "minimum": 0 },
+            "max_weight_kg": { "type": ["number", "null"], "minimum": 0 },
+            "dimensions_cm": { "$ref": "#/$defs/dimensions" },
+            "limited_by": { "type": ["string", "null"] }
+          }
+        },
+        "personal_item": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "pieces": { "type": ["integer", "null"], "minimum": 0 },
+            "max_weight_kg": { "type": ["number", "null"], "minimum": 0 },
+            "dimensions_cm": { "$ref": "#/$defs/dimensions" },
+            "limited_by": { "type": ["string", "null"] }
+          }
+        },
+        "rationale": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

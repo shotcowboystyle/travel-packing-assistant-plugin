@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# Rendered documents are regenerable from the YAML — keep the inputs, not the outputs.
+# Delete these two lines if you'd rather archive the PDF that actually went to the airport.
+output/*.pdf

@@ -1,0 +1,50 @@
+# Sample trip workspace — itinerary.yaml
+#
+# FICTIONAL. Carriers, flight numbers and booking references below are invented
+# for the worked example. Do not use any of it for a real journey.
+#
+# Two segments sold on one ticket: a transatlantic leg followed by a short-haul
+# connection. That combination is the interesting case, because bags are
+# through-checked and the tightest per-segment allowance governs the whole
+# journey (see docs/design-notes.md).
+
+trip:
+  id: sample-bos-tlv-0826
+  label: "Boston → Athens → Tel Aviv, August 2026"
+  travellers: 1
+  direction: outbound
+
+tickets:
+  - id: T1
+    booking_ref: SAMPLE1
+    validating_carrier: NW
+    segments: [S1, S2]
+
+segments:
+  - id: S1
+    date: 2026-08-27
+    marketing_carrier: NW
+    marketing_flight: "NW 118"
+    operating_carrier: NW
+    from: BOS
+    to: ATH
+    cabin: economy
+    fare_brand: "Classic"
+    loyalty:
+      programme: null
+      tier: null
+      carried_by: null
+
+  - id: S2
+    date: 2026-08-28
+    marketing_carrier: NW
+    marketing_flight: "NW 4412"
+    operating_carrier: MR
+    from: ATH
+    to: TLV
+    cabin: economy
+    fare_brand: "Light"
+    loyalty:
+      programme: null
+      tier: null
+      carried_by: null

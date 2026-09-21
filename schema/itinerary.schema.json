@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://danielrosehill.github.io/travel-packing/schema/itinerary.schema.json",
+  "title": "itinerary.yaml",
+  "description": "Segments, tickets and carriers for one trip workspace. See docs/data-model.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trip", "segments"],
+  "properties": {
+    "trip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "kebab-case, matches the workspace directory name",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "label": {
+          "type": "string",
+          "description": "may be empty in a freshly created workspace"
+        },
+        "travellers": { "type": "integer", "minimum": 1 },
+        "direction": {
+          "type": "string",
+          "enum": ["outbound", "return", "round-trip"]
+        }
+      }
+    },
+    "tickets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ticket" }
+    },
+    "segments": {
+      "type": "array",
+      "description": "empty in a freshly created workspace, before intake has run",
+      "items": { "$ref": "#/$defs/segment" }
+    }
+  },
+  "$defs": {
+    "ticket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "segments"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "booking_ref": { "type": ["string", "null"] },
+        "validating_carrier": {
+          "type": ["string", "null"],
+          "description": "the airline whose stock the ticket is on"
+        },
+        "segments": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "date",
+        "marketing_carrier",
+        "operating_carrier",
+        "from",
+        "to",
+        "cabin"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "date": { "type": "string", "format": "date" },
+        "marketing_carrier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "IATA code on the ticket; sets the baggage allowance"
+        },
+        "marketing_flight": { "type": ["string", "null"] },
+        "operating_carrier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "who actually flies it; sets gate handling and sizer enforcement"
+        },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "cabin": {
+          "type": "string",
+          "enum": ["economy", "premium-economy", "business", "first"]
+        },
+        "fare_brand": { "type": ["string", "null"] },
+        "loyalty": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "programme": { "type": ["string", "null"] },
+            "tier": { "type": ["string", "null"] },
+            "carried_by": {
+              "type": ["string", "null"],
+              "description": "traveller id whose status applies"
+            }
+          }
+        }
+      }
+    }
+  }
+}

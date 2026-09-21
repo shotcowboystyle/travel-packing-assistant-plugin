@@ -1,0 +1,107 @@
+# Sample trip workspace — allowances.yaml
+#
+# ############################################################################
+# #  EVERY NUMBER IN THIS FILE IS ILLUSTRATIVE AND FICTIONAL.                #
+# #  "Northwind Atlantic" (NW) and "Meridian Regional" (MR) are invented     #
+# #  carriers. The weights, dimensions and fees are made up to exercise the  #
+# #  templates. They must NOT be relied on for a real trip. Run              #
+# #  /travel-packing:policies against the actual carriers instead.           #
+# ############################################################################
+#
+# The example is deliberately built so that:
+#   - the checked limit is set by one segment (S1) and the cabin limit by the
+#     other (S2) — so `limited_by` is meaningful rather than decorative;
+#   - the segment that sets the binding cabin limit is the one whose research
+#     came back `assumed`, which is exactly the case a rendered document has to
+#     put in front of the traveller rather than bury.
+
+verified_on: 2026-08-16
+
+segments:
+  - segment_id: S1
+    carrier_name: "Northwind Atlantic"
+    system: piece
+    source:
+      url: https://example.invalid/northwind/baggage
+      fetched_on: 2026-08-14
+      route: webfetch
+      confidence: confirmed
+      quote: "Classic fares include one checked bag up to 23 kg and one cabin bag up to 8 kg."
+    checked:
+      included_pieces: 1
+      max_weight_kg: 23
+      max_linear_cm: 158
+      hard_max_weight_kg: 32
+    cabin:
+      pieces: 1
+      max_weight_kg: 8
+      dimensions_cm: [56, 45, 25]
+      enforced: spot-check
+    personal_item:
+      pieces: 1
+      max_weight_kg: null
+      dimensions_cm: [40, 30, 15]
+    excess:
+      currency: USD
+      extra_bag_prepaid: 85
+      extra_bag_airport: 120
+      overweight_band: "23–32 kg"
+      overweight_fee: 100
+    notes: "Hard refusal above 32 kg — no fee will get the bag accepted."
+
+  - segment_id: S2
+    carrier_name: "Meridian Regional"
+    system: piece
+    source:
+      url: https://example.invalid/meridian/hand-baggage
+      fetched_on: 2026-08-15
+      route: geo-egress
+      confidence: assumed
+      quote: null
+    checked:
+      included_pieces: 1
+      max_weight_kg: 25
+      max_linear_cm: 158
+      hard_max_weight_kg: 32
+    cabin:
+      pieces: 1
+      max_weight_kg: 7
+      dimensions_cm: [55, 40, 20]
+      enforced: always
+    personal_item:
+      pieces: 1
+      max_weight_kg: 3
+      dimensions_cm: [40, 30, 15]
+    excess:
+      currency: EUR
+      extra_bag_prepaid: 45
+      extra_bag_airport: 65
+      overweight_band: "25–32 kg"
+      overweight_fee: 70
+    notes: >-
+      No fare-brand table published for the Light fare on this route. Figures
+      copied from the carrier's general economy page and marked assumed: gate
+      weighing of cabin bags is described as routine, so the 7 kg figure is the
+      one most likely to bite.
+
+binding:
+  checked:
+    included_pieces: 1
+    max_weight_kg: 23
+    max_linear_cm: 158
+    hard_max_weight_kg: 32
+    limited_by: S1
+  cabin:
+    pieces: 1
+    max_weight_kg: 7
+    dimensions_cm: [55, 40, 20]
+    limited_by: S2
+  personal_item:
+    pieces: 1
+    max_weight_kg: 3
+    dimensions_cm: [40, 30, 15]
+    limited_by: S2
+  rationale: >-
+    Both segments are on ticket T1, so bags are through-checked from BOS and the
+    tightest per-segment limit governs the whole journey: checked weight from S1
+    (23 kg), cabin weight and cabin dimensions from S2 (7 kg, 55×40×20).

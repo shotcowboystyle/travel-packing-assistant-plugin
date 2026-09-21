@@ -1,0 +1,35 @@
+# Physical bags, packing cubes, and every scale reading.
+# Schema: <plugin>/schema/bags.schema.json
+#
+# tare_kg is the empty weight, on the scale, with nothing inside. Every published
+# allowance is gross weight, so tare comes straight off usable capacity — a large hard
+# case can spend a fifth of a 23 kg allowance on itself.
+
+bags: []
+# - id: CHK1
+#   label: ""
+#   type: checked              # checked | cabin | personal
+#   owner: ""
+#   tare_kg: null
+#   external_cm: [78, 50, 30]  # including wheels and handles — that is how they measure it
+#   expandable: false
+#   cubes:
+#     - id: CUBE-A
+#       label: ""
+#       tare_kg: 0.12
+#       volume_l: null
+
+# Readings APPEND. Never overwrite an earlier weighing — the weight history across legs
+# is the data.
+weighings: []
+# - bag: CHK1
+#   phase: empty               # empty | outbound | current | final
+#   gross_kg: null
+#   date: 2026-01-01
+#   scale: hook
+
+scales: []
+# - id: hook
+#   label: "Luggage hook scale"
+#   resolution_kg: 0.1
+#   bias_kg: 0.0               # only from scripts/reconcile.py, only with the user's say-so
