@@ -20,15 +20,15 @@ the airport, and the full **packing list** with tick boxes.
 Install the plugin, then:
 
 ```
-/travel-packing:status          where this trip stands
-/travel-packing:itinerary       enter or amend the flights
-/travel-packing:policies        research the allowances
-/travel-packing:inventory       what is being carried
-/travel-packing:weigh           record scale readings
-/travel-packing:plan            solve the pack
-/travel-packing:docs            render the PDFs
-/travel-packing:overage         price the ways out of being over
-/travel-packing:leave-behind    ranked drop list
+/travel-packing-assistant:status          where this trip stands
+/travel-packing-assistant:itinerary       enter or amend the flights
+/travel-packing-assistant:policies        research the allowances
+/travel-packing-assistant:inventory       what is being carried
+/travel-packing-assistant:weigh           record scale readings
+/travel-packing-assistant:plan            solve the pack
+/travel-packing-assistant:docs            render the PDFs
+/travel-packing-assistant:overage         price the ways out of being over
+/travel-packing-assistant:leave-behind    ranked drop list
 ```
 
 Without the plugin, the scripts still run standalone against this directory — see the plugin's

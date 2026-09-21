@@ -5,7 +5,7 @@
 # #  "Northwind Atlantic" (NW) and "Meridian Regional" (MR) are invented     #
 # #  carriers. The weights, dimensions and fees are made up to exercise the  #
 # #  templates. They must NOT be relied on for a real trip. Run              #
-# #  /travel-packing:policies against the actual carriers instead.           #
+# #  /travel-packing-assistant:policies against the actual carriers instead.           #
 # ############################################################################
 #
 # The example is deliberately built so that:

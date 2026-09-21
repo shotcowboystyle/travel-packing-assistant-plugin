@@ -297,7 +297,7 @@ def render_text(workspace: Path, checked: list[str], report: Report) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Validate a trip workspace against the travel-packing schemas."
+        description="Validate a trip workspace against the travel-packing-assistant schemas."
     )
     parser.add_argument(
         "workspace",

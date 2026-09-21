@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash(python3 *), Bash(ls *), Grep, Glob
 The inventory is the input everything else depends on. A plan built on a half-inventory is a
 plan for a bag that does not exist.
 
-It does not have to be complete to be useful — `/travel-packing:weigh` reconciles the itemised
+It does not have to be complete to be useful — `/travel-packing-assistant:weigh` reconciles the itemised
 total against the actual scale reading and reports the gap, so a partial inventory is honest
 rather than wrong. What it must not be is *silently* partial.
 

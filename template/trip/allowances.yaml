@@ -1,4 +1,4 @@
-# Researched baggage policy, per segment. Written by /travel-packing:policies.
+# Researched baggage policy, per segment. Written by /travel-packing-assistant:policies.
 # Schema: <plugin>/schema/allowances.schema.json
 #
 # RULE: a number without a source is not an allowance. Every entry carries source.url,
@@ -39,7 +39,7 @@ segments: []
 #     overweight_fee: null
 #   notes: ""
 
-# Computed by /travel-packing:policies: the single set of limits to pack to.
+# Computed by /travel-packing-assistant:policies: the single set of limits to pack to.
 binding: null
 # binding:
 #   checked: {included_pieces: 1, max_weight_kg: 23, limited_by: S2}

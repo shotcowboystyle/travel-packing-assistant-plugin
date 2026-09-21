@@ -38,7 +38,7 @@ Options worth knowing:
 - `--objective consolidate` — fill fewer bags, for a traveller who would rather leave a bag at
   home or avoid a second checked-bag fee.
 - `--overflow` — when it does not all fit, also emit the ranked drop list that
-  `/travel-packing:leave-behind` reads.
+  `/travel-packing-assistant:leave-behind` reads.
 
 The solver is deterministic: same inputs, same plan, every run. If a re-run produces a
 different allocation, an input changed — find out which before showing the new plan, because a
@@ -54,7 +54,7 @@ an airport reading is routinely half a kilogram, and it is always in the wrong d
 
 If items land in `unassigned`, the pack is infeasible as specified. Say so plainly, give the
 shortfall in kilograms, and offer the three levers: another bag (price it with
-`/travel-packing:overage`), less stuff (`/travel-packing:leave-behind`), or moving weight onto
+`/travel-packing-assistant:overage`), less stuff (`/travel-packing-assistant:leave-behind`), or moving weight onto
 the body — worn coats, boots and a loaded jacket are not weighed, and on a genuinely marginal
 bag this is worth 2–4 kg for free.
 
@@ -92,5 +92,5 @@ regardless of weight; the cabin liquids bag is a separate constraint the solver 
 4. Report, arithmetic first: a bag-by-bag table of allowance / projected gross / headroom /
    status, then total across bags, then the warnings.
 5. Give the physical instructions per bag, cube by cube.
-6. Name the next step: `/travel-packing:docs` to render the counter card and packing list, or
-   `/travel-packing:overage` if any bag is over.
+6. Name the next step: `/travel-packing-assistant:docs` to render the counter card and packing list, or
+   `/travel-packing-assistant:overage` if any bag is over.

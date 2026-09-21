@@ -1,5 +1,5 @@
 // =============================================================================
-// travel-packing — PACKING LIST
+// travel-packing-assistant — PACKING LIST
 // =============================================================================
 //
 // The working document: what goes in which bag, in which cube, in what

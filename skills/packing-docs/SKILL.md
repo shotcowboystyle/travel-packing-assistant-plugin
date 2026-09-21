@@ -88,7 +88,7 @@ that fails on a missing field exits non-zero; a compile that succeeds against an
 
 ## Delivery
 
-Read `~/.claude-plugins/travel-packing/delivery.yaml` if it exists:
+Read `~/.claude-plugins/travel-packing-assistant/delivery.yaml` if it exists:
 
 ```yaml
 default: local                 # local | email | drive | repo

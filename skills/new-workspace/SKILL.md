@@ -26,9 +26,9 @@ trips loses the ability to say what a bag weighed leaving home.
   names the dates a home is empty and lists what is worth stealing from it.
 
 ```
-/travel-packing:new-trip bos-ath-tlv-0826
-/travel-packing:new-trip tlv-lhr-nov26 ~/repos/github/personal-admin
-/travel-packing:new-trip quick-hop --local-only
+/travel-packing-assistant:new-trip bos-ath-tlv-0826
+/travel-packing-assistant:new-trip tlv-lhr-nov26 ~/repos/github/personal-admin
+/travel-packing-assistant:new-trip quick-hop --local-only
 ```
 
 ## Procedure
@@ -56,7 +56,7 @@ Do not copy any `.claude/` tree — the plugin's commands are already global.
 
 In the new `CLAUDE.md`, replace `{{TRIP_NAME}}`, `{{CREATED_ON}}` (absolute date) and the
 ambient facts block. In `itinerary.yaml`, set `trip.id` to the trip name and leave the rest as
-the commented skeleton — `/travel-packing:itinerary` fills it in.
+the commented skeleton — `/travel-packing-assistant:itinerary` fills it in.
 
 ### 5. Ask only what cannot be inferred
 
@@ -67,7 +67,7 @@ Two questions, together, then stop:
 
 Write the answers into `CLAUDE.md` under "Trip" and into `itinerary.trip`.
 
-Do **not** start researching allowances here. That is `/travel-packing:policies`, and it needs
+Do **not** start researching allowances here. That is `/travel-packing-assistant:policies`, and it needs
 the full segment list first.
 
 ### 6. Git
@@ -84,7 +84,7 @@ created, and carry on. A missing remote is not a reason to leave the workspace u
 
 ### 7. Hand off
 
-Tell the user the path, and that the next step is `/travel-packing:itinerary` to enter the
+Tell the user the path, and that the next step is `/travel-packing-assistant:itinerary` to enter the
 flights. Name the sequence so they know where they are:
 
 ```

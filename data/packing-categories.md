@@ -1,6 +1,6 @@
 # Packing categories — the sweep
 
-Used by `/travel-packing:inventory` in category-sweep mode, when the packing has not happened
+Used by `/travel-packing-assistant:inventory` in category-sweep mode, when the packing has not happened
 yet. Walk them in order and ask what is going in each. The order is deliberate: it front-loads
 the categories that dominate the weight and ends with the ones people actually remember
 unprompted.

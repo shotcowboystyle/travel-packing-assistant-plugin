@@ -73,5 +73,5 @@ is the number the airport scale will agree with.
 3. Run `reconcile.py`.
 4. Report per bag: gross, allowance, headroom, status, and the unaccounted mass. Lead with the
    arithmetic — gross minus allowance — before any interpretation.
-5. If any bag is over, or inside 1.5 kg of its limit, name it and offer `/travel-packing:plan`
-   to redistribute or `/travel-packing:overage` to price the alternatives.
+5. If any bag is over, or inside 1.5 kg of its limit, name it and offer `/travel-packing-assistant:plan`
+   to redistribute or `/travel-packing-assistant:overage` to price the alternatives.

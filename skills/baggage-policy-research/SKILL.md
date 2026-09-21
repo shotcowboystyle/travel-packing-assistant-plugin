@@ -121,5 +121,5 @@ carry the risk, rather than deciding for them.
    state the binding limit in one sentence, and list every figure that is not `confirmed` with
    the specific thing the user would have to do to confirm it.
 
-Do not proceed to `/travel-packing:plan` while the checked allowance for any segment is
+Do not proceed to `/travel-packing-assistant:plan` while the checked allowance for any segment is
 `assumed`. Say so and say what is needed.

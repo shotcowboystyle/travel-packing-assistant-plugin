@@ -11,7 +11,7 @@ you. Deciding what to abandon takes ten calm minutes at home and goes badly in n
 at a counter.
 
 Only run this when the user has said they are willing to leave things. It is not the first
-answer to being overweight — `/travel-packing:overage` prices the alternatives, and paying a
+answer to being overweight — `/travel-packing-assistant:overage` prices the alternatives, and paying a
 fee is frequently the better deal.
 
 ## The ranking

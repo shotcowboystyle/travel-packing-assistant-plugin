@@ -582,7 +582,7 @@ def build_plan(
     binding = allowances.get("binding")
     if not isinstance(binding, dict):
         raise SolverError(
-            "allowances.yaml has no `binding` block. Run /travel-packing:policies first — "
+            "allowances.yaml has no `binding` block. Run /travel-packing-assistant:policies first — "
             "the solver will not guess a limit."
         )
 

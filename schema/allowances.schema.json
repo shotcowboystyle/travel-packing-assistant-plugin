@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://danielrosehill.github.io/travel-packing/schema/allowances.schema.json",
+  "$id": "https://shotcowboystyle.github.io/travel-packing-assistant/schema/allowances.schema.json",
   "title": "allowances.yaml",
   "description": "Researched baggage policy per segment, plus the computed binding limits. See docs/data-model.md.",
   "type": "object",
@@ -14,7 +14,7 @@
     },
     "segments": {
       "type": "array",
-      "description": "empty until /travel-packing:policies has run",
+      "description": "empty until /travel-packing-assistant:policies has run",
       "items": { "$ref": "#/$defs/segmentAllowance" }
     },
     "binding": { "$ref": "#/$defs/binding" }
@@ -120,7 +120,7 @@
     "binding": {
       "type": ["object", "null"],
       "additionalProperties": false,
-      "description": "COMPUTED by /travel-packing:policies; the tightest limit across the journey",
+      "description": "COMPUTED by /travel-packing-assistant:policies; the tightest limit across the journey",
       "properties": {
         "checked": {
           "type": "object",

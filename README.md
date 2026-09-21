@@ -10,19 +10,19 @@ tightest one on the route. Nobody works that out at 05:00 on the day. This works
 advance, then packs to it.
 
 ```
-/travel-packing:itinerary       enter the flights
-/travel-packing:policies        research every carrier's real allowance
-/travel-packing:inventory       what you're carrying, by weight
-/travel-packing:weigh           scale readings, reconciled against the inventory
-/travel-packing:plan            solve the pack, bag by bag and cube by cube
-/travel-packing:docs            counter card + packing list, as PDFs
+/travel-packing-assistant:itinerary       enter the flights
+/travel-packing-assistant:policies        research every carrier's real allowance
+/travel-packing-assistant:inventory       what you're carrying, by weight
+/travel-packing-assistant:weigh           scale readings, reconciled against the inventory
+/travel-packing-assistant:plan            solve the pack, bag by bag and cube by cube
+/travel-packing-assistant:docs            counter card + packing list, as PDFs
 ```
 
 And when it does not fit:
 
 ```
-/travel-packing:overage         price every way out, recommend one
-/travel-packing:leave-behind    ranked drop list, with a stop line
+/travel-packing-assistant:overage         price every way out, recommend one
+/travel-packing-assistant:leave-behind    ranked drop list, with a stop line
 ```
 
 ## What makes the answers trustworthy
@@ -63,7 +63,7 @@ repo — see [`docs/delivery.md`](docs/delivery.md).
 
 ## How it is organised
 
-One **trip workspace** per itinerary, created by `/travel-packing:new-trip`. The plugin is
+One **trip workspace** per itinerary, created by `/travel-packing-assistant:new-trip`. The plugin is
 stateless; the workspace holds the flights, the researched allowances, the bags, the inventory
 and the generated plan, as YAML files with published schemas. Workspaces are private by
 default — a packing workspace names the dates your home is empty.
@@ -95,8 +95,8 @@ need `PyYAML` and `jsonschema` only.
 ## Installation
 
 ```
-/plugin marketplace add danielrosehill/Claude-Code-Plugins
-/plugin install travel-packing@danielrosehill
+/plugin marketplace add shotcowboystyle/plugins-marketplace
+/plugin install travel-packing-assistant@shotcowboystyle
 ```
 
 Typst is required only for the PDF output: [install instructions](https://github.com/typst/typst#installation).

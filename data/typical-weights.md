@@ -2,7 +2,7 @@
 
 Use these only to fill `weight_source: estimated` entries. They are ranges, not figures, and
 the spread within a row is often wide enough to matter across a whole bag — which is why
-`/travel-packing:weigh` reconciles the itemised total against the actual scale reading rather
+`/travel-packing-assistant:weigh` reconciles the itemised total against the actual scale reading rather
 than trusting a sum of estimates.
 
 **Weigh the heavy end.** Mass in luggage is concentrated: shoes, outerwear, electronics,

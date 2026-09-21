@@ -5,7 +5,7 @@ workspace and nothing leaves the machine.
 
 ## The file
 
-`~/.claude-plugins/travel-packing/delivery.yaml`
+`~/.claude-plugins/travel-packing-assistant/delivery.yaml`
 
 ```yaml
 default: local                 # local | email | drive | repo

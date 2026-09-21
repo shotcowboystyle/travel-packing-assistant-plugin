@@ -1,5 +1,5 @@
 // =============================================================================
-// travel-packing — CHECK-IN COUNTER CARD
+// travel-packing-assistant — CHECK-IN COUNTER CARD
 // =============================================================================
 //
 // One A4 side, printed and carried. It answers the three questions that get

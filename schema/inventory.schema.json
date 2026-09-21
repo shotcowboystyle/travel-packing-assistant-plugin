@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://danielrosehill.github.io/travel-packing/schema/inventory.schema.json",
+  "$id": "https://shotcowboystyle.github.io/travel-packing-assistant/schema/inventory.schema.json",
   "title": "inventory.yaml",
   "description": "Everything being carried. Weights are grams per unit. See docs/data-model.md.",
   "type": "object",

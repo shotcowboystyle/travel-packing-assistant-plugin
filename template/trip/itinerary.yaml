@@ -1,4 +1,4 @@
-# Flights for this trip. Filled in by /travel-packing:itinerary.
+# Flights for this trip. Filled in by /travel-packing-assistant:itinerary.
 # Schema: <plugin>/schema/itinerary.schema.json — see <plugin>/docs/data-model.md
 
 trip:

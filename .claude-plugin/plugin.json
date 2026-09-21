@@ -1,5 +1,5 @@
 {
-  "name": "travel-packing",
+  "name": "travel-packing-assistant",
   "version": "1.0.1",
   "description": "Claude Code plugin: Travel Packing Assistant — work out the real baggage allowance for every segment of an international itinerary, inventory what is being carried by weight, solve the pack against the binding limit, price the excess-baggage options, and rank an emergency leave-behind list. Renders an airport counter card and a per-bag packing list to PDF with Typst. One trip workspace per itinerary.",
   "author": {

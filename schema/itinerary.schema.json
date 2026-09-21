@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://danielrosehill.github.io/travel-packing/schema/itinerary.schema.json",
+  "$id": "https://shotcowboystyle.github.io/travel-packing-assistant/schema/itinerary.schema.json",
   "title": "itinerary.yaml",
   "description": "Segments, tickets and carriers for one trip workspace. See docs/data-model.md.",
   "type": "object",

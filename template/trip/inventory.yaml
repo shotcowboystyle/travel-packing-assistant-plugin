@@ -1,4 +1,4 @@
-# Everything being carried. Written by /travel-packing:inventory.
+# Everything being carried. Written by /travel-packing-assistant:inventory.
 # Schema: <plugin>/schema/inventory.schema.json
 #
 # weight_g is grams, PER UNIT, not for the whole qty.

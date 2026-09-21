@@ -67,7 +67,7 @@ whole journey. See `docs/design-notes.md`.
 
 ## allowances.yaml
 
-Written by `/travel-packing:policies`. Never hand-invented — every entry carries its
+Written by `/travel-packing-assistant:policies`. Never hand-invented — every entry carries its
 source.
 
 ```yaml
@@ -104,7 +104,7 @@ segments:
       overweight_fee: 60
     notes: "Light fare includes no checked bag on the transatlantic leg."
 
-binding:                          # COMPUTED by /travel-packing:policies
+binding:                          # COMPUTED by /travel-packing-assistant:policies
   checked:
     included_pieces: 1
     max_weight_kg: 23
@@ -181,7 +181,7 @@ it for you to enter. It never writes the field itself.
 
 `phase` matters: `empty` gives tare, `outbound` is what the bag weighed leaving home,
 `current` is where it stands now (after a trip has added things), `final` is the
-check-in reading. `/travel-packing:weigh` appends rather than overwrites, so the
+check-in reading. `/travel-packing-assistant:weigh` appends rather than overwrites, so the
 weight history of a bag across a multi-leg trip stays intact.
 
 ---
@@ -211,7 +211,7 @@ items:
     cube: CUBE-A
 ```
 
-`tier` and `replaceable_at_destination` exist for one purpose: `/travel-packing:leave-behind`
+`tier` and `replaceable_at_destination` exist for one purpose: `/travel-packing-assistant:leave-behind`
 ranks by cost-per-kilogram-saved, and it cannot do that without knowing what a thing is
 worth and whether it can be re-bought at the other end.
 
@@ -291,7 +291,7 @@ limit to be close to.
 ordered ascending by `cost_per_kg` — drop from the top. `cost` is the item's `value`,
 falling back to a tier proxy (essential 1000, useful 100, nice-to-have 10, expendable 1)
 when no value is recorded, and reduced to `replaceable_at_destination.cost` for anything
-that can simply be re-bought on arrival. `/travel-packing:leave-behind` consumes this
+that can simply be re-bought on arrival. `/travel-packing-assistant:leave-behind` consumes this
 list.
 
 `errors` appears only when something could not be solved rather than merely optimised —

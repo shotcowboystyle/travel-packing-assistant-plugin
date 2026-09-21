@@ -65,7 +65,7 @@ Everything else in `itinerary.yaml` is context. These four change the answer:
    python3 ${CLAUDE_PLUGIN_ROOT}/scripts/validate.py . --json
    ```
 7. Summarise back as a table — date, flight, route, cabin, fare brand, ticket — and name the
-   next step: `/travel-packing:policies`.
+   next step: `/travel-packing-assistant:policies`.
 
 ## Return journeys
 

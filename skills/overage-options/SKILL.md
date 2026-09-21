@@ -20,7 +20,7 @@ this list with an expiry.
 
 **2. Redistribute instead of paying.** Before pricing anything: is the itinerary over in total,
 or over on one bag? A 26 kg bag beside a 19 kg bag under a piece concept costs an overweight
-fee for nothing. Run `/travel-packing:plan` first. Under a weight concept, redistribution buys
+fee for nothing. Run `/travel-packing-assistant:plan` first. Under a weight concept, redistribution buys
 nothing at all and this step is skipped — which is why the piece-vs-weight determination in
 `allowances.yaml` matters here.
 
@@ -45,7 +45,7 @@ receive it. A parcel that arrives after the traveller leaves is not a saving.
 **7. Wear it.** Coats, boots, loaded jacket pockets. Free, immediate, socially normal, and
 worth a few kilograms. Always mention it; never present it as the whole answer.
 
-**8. Leave it.** `/travel-packing:leave-behind` ranks what to drop. This is the option that
+**8. Leave it.** `/travel-packing-assistant:leave-behind` ranks what to drop. This is the option that
 gets chosen by default at the desk when none of the others were prepared.
 
 ## Getting the prices right

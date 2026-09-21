@@ -729,7 +729,7 @@ def render_counter_card(ws: Workspace, title: str, rendered_at: str) -> list[str
 
     if not (checked or cabin or personal):
         lines += [
-            "_No `binding` block in allowances.yaml — run `/travel-packing:policies` "
+            "_No `binding` block in allowances.yaml — run `/travel-packing-assistant:policies` "
             "before relying on this card._",
             "",
         ]

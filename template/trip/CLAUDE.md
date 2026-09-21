@@ -4,7 +4,7 @@ Created {{CREATED_ON}}. One workspace, one itinerary.
 
 ## Trip
 
-<!-- filled in by /travel-packing:new-trip -->
+<!-- filled in by /travel-packing-assistant:new-trip -->
 
 - Route:
 - Dates:
@@ -43,15 +43,15 @@ the data.
 
 | File | What it holds | Written by |
 | --- | --- | --- |
-| `itinerary.yaml` | segments, tickets, carriers | `/travel-packing:itinerary` |
-| `allowances.yaml` | researched policy + binding limit | `/travel-packing:policies` |
-| `bags.yaml` | bags, cubes, tares, scale readings | `/travel-packing:inventory`, `:weigh` |
-| `inventory.yaml` | everything being carried | `/travel-packing:inventory` |
-| `plan.yaml` | generated allocation | `/travel-packing:plan` |
-| `overage.md` | costed excess options | `/travel-packing:overage` |
-| `leave-behind.md` | ranked drop list | `/travel-packing:leave-behind` |
-| `research/` | saved carrier policy pages | `/travel-packing:policies` |
-| `output/` | rendered PDFs | `/travel-packing:docs` |
+| `itinerary.yaml` | segments, tickets, carriers | `/travel-packing-assistant:itinerary` |
+| `allowances.yaml` | researched policy + binding limit | `/travel-packing-assistant:policies` |
+| `bags.yaml` | bags, cubes, tares, scale readings | `/travel-packing-assistant:inventory`, `:weigh` |
+| `inventory.yaml` | everything being carried | `/travel-packing-assistant:inventory` |
+| `plan.yaml` | generated allocation | `/travel-packing-assistant:plan` |
+| `overage.md` | costed excess options | `/travel-packing-assistant:overage` |
+| `leave-behind.md` | ranked drop list | `/travel-packing-assistant:leave-behind` |
+| `research/` | saved carrier policy pages | `/travel-packing-assistant:policies` |
+| `output/` | rendered PDFs | `/travel-packing-assistant:docs` |
 
 ## Order
 
@@ -61,7 +61,7 @@ itinerary → policies → inventory → weigh → plan → docs
                                      └── overage / leave-behind if over
 ```
 
-`/travel-packing:status` says where you are.
+`/travel-packing-assistant:status` says where you are.
 
 ## After the trip
 
