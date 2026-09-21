@@ -1,3 +1,7 @@
+---
+description: Build or update inventory.yaml — everything being carried, by weight
+---
+
 # Inventory
 
 Build or update `inventory.yaml` — what is being carried, by weight.

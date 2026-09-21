@@ -1,3 +1,7 @@
+---
+description: Research each carrier's real allowance per segment and compute the binding limit
+---
+
 # Baggage Policies
 
 Research the checked, cabin and personal-item allowance for every segment in `itinerary.yaml`,

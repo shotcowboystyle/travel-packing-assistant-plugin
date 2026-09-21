@@ -1,3 +1,7 @@
+---
+description: Provision a new trip workspace for one itinerary
+---
+
 # New Trip Workspace
 
 Provision a packing workspace for a specific itinerary.

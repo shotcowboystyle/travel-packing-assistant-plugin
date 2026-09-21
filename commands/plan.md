@@ -1,3 +1,7 @@
+---
+description: Solve the pack against the binding limit and give cube-by-cube packing instructions
+---
+
 # Plan
 
 Solve the pack and turn it into packing instructions.

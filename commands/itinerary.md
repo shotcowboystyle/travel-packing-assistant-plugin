@@ -1,3 +1,7 @@
+---
+description: Capture or amend this trip's flights, tickets and fare brands into itinerary.yaml
+---
+
 # Itinerary
 
 Capture or amend the flights for this trip into `itinerary.yaml`.

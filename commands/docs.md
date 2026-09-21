@@ -1,3 +1,7 @@
+---
+description: Render the counter card and per-bag packing list to PDF with Typst and deliver them
+---
+
 # Docs
 
 Render the counter card and the packing list to PDF, and deliver them.

@@ -1,3 +1,7 @@
+---
+description: Show where this trip stands — validation, reconciliation and what to do next
+---
+
 # Status
 
 Where this trip stands, in one screen.

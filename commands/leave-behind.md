@@ -1,3 +1,7 @@
+---
+description: Rank an emergency leave-behind list by cost per kilogram saved, with a stop line
+---
+
 # Leave Behind
 
 Produce the ranked emergency drop list.

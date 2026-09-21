@@ -1,3 +1,7 @@
+---
+description: Record scale readings and reconcile them against the inventory
+---
+
 # Weigh
 
 Record scale readings and reconcile them against the inventory.
